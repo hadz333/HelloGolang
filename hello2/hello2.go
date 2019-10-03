@@ -12,10 +12,13 @@ type person struct {
 }
 
 func main() {
+	// declaration of array
 	a := []int{5, 2, 3, 1, 4}
+	// array doesn't have fixed size 
 	a = append(a, 13)
 	fmt.Println(a)
 
+	// maps in Go
 	vertices := make(map[string]int)
 
 	vertices["Triangle"] = 2
@@ -25,12 +28,13 @@ func main() {
 	delete(vertices, "Square")
 	fmt.Println("After delete: ", vertices)
 
+	// for loops
 	for i := 0; i < 5; i++ {
 		fmt.Println(i)
 	}
 
 	i := 0
-
+	// for loops are the only kind of loop in Go
 	for i < 3 {
 		fmt.Println(i)
 		i++
@@ -53,6 +57,7 @@ func main() {
 	fmt.Println(sum(2, 8))
 
 	num := 9
+	// func can return multiple values
 	result, err := sqrt(9)
 
 	if err != nil {
@@ -61,8 +66,10 @@ func main() {
 		fmt.Println("Square root of", num, "is", result)
 	}
 
+	// structs
 	structExample()
 
+	// pointer example
 	pointerExample()
 }
 
