@@ -6,13 +6,20 @@ import (
 )
 
 func main() {
-	go count("sheep")
-	go count("fish")
+	c := make(chan string)
+	go count("sheep", c)
+
+
+	for msg := range c {
+		fmt.Println(msg)
+	}
 }
 
-func count(thing string) {
-	for i := 1; true; i++ {
-		fmt.Println(i, thing)
+func count(thing string, c chan string) {
+	for i := 1; i <= 5; i++ {
+		c <- thing
 		time.Sleep(time.Millisecond * 500)
 	}
+
+	close(c)
 }
