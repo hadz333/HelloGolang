@@ -4,7 +4,8 @@ import (
 	"fmt"
 )
 
-// "worker pools" pattern - a queue of work to be done and multiple concurrent workers pulling items off the queue
+// "worker pools" pattern - a queue of work to be done 
+// and multiple concurrent workers pulling items off the queue
 
 
 func main() {
